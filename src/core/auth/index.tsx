@@ -7,7 +7,8 @@ import { getToken, removeToken, setToken } from './utils';
 interface AuthState {
   token: TokenType | null;
   status: 'idle' | 'signOut' | 'signIn';
-  signIn: (data: TokenType) => void;
+  email: string;
+  signIn: (data: TokenType, dataEmail: string) => void;
   signOut: () => void;
   hydrate: () => void;
 }
@@ -15,9 +16,10 @@ interface AuthState {
 const _useAuth = create<AuthState>((set, get) => ({
   status: 'idle',
   token: null,
-  signIn: (token) => {
+  email: 'null',
+  signIn: (token, dataEmail) => {
     setToken(token);
-    set({ status: 'signIn', token });
+    set({ status: 'signIn', token,email: dataEmail});
   },
   signOut: () => {
     removeToken();
@@ -27,7 +29,7 @@ const _useAuth = create<AuthState>((set, get) => ({
     try {
       const userToken = getToken();
       if (userToken !== null) {
-        get().signIn(userToken);
+        get().signIn(userToken, 'null');
       } else {
         get().signOut();
       }
@@ -41,5 +43,5 @@ const _useAuth = create<AuthState>((set, get) => ({
 export const useAuth = createSelectors(_useAuth);
 
 export const signOut = () => _useAuth.getState().signOut();
-export const signIn = (token: TokenType) => _useAuth.getState().signIn(token);
+export const signIn = (token: TokenType, dataEmail: string) => _useAuth.getState().signIn(token, dataEmail);
 export const hydrateAuth = () => _useAuth.getState().hydrate();
