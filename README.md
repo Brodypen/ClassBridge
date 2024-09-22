@@ -29,6 +29,9 @@ We utilized technologiez such as React Native, typescript, and Tailwind CSS, we 
 ## :computer: Back-End
 For the backend with mainly used Firebase cloud, store datab base, as well as firebase functions. Also, we have made it so it it serverless which contributes to the cost efficiency of the project when trying to escalate it to the next level.
 
+## :speaker: Support for multiple languages
+We introduced a feature to give users the option to switch between their main languages, for the moment only english and spanish are inplemented.
+
 A diagram of our backend and workflow can be found down below, this diagram was followed in order to get the app up and running, although as new ideas came to fruition we expanded beyond this diagram.
 
 ![Backend and Workflow Diagram](https://i.imgur.com/OtEpaF9.png)
