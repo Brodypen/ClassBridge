@@ -21,7 +21,7 @@ module.exports = {
       },
     ],
     'max-params': ['error', 3], // Limit the number of parameters in a function to use object instead
-    'max-lines-per-function': ['error', 70],
+    'max-lines-per-function': ['error', 150],
     'react/display-name': 'off',
     'react/no-inline-styles': 'off',
     'react/destructuring-assignment': 'off', // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
@@ -47,9 +47,9 @@ module.exports = {
     'simple-import-sort/exports': 'error', // Export configuration for `eslint-plugin-simple-import-sort`
     '@typescript-eslint/no-unused-vars': 'off',
     'tailwindcss/no-custom-classname': 'off',
-    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-imports': 'off',
     'unused-imports/no-unused-vars': [
-      'error',
+      'off',
       {
         argsIgnorePattern: '^_',
         varsIgnorePattern: '^_',

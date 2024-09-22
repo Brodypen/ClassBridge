@@ -12,7 +12,7 @@ export default function Login() {
 
   const onSubmit: LoginFormProps['onSubmit'] = (data) => {
     console.log(data);
-    signIn({ access: 'access-token', refresh: 'refresh-token' });
+    signIn({ access: 'access-token', refresh: 'refresh-token' }, data['email']);
     router.push('/');
   };
   return (

@@ -32,6 +32,17 @@ export default function TabLayout() {
   }
   return (
     <Tabs>
+       <Tabs.Screen
+        name="course"
+        options={{
+          title: 'Course',
+          headerShown: false,
+          tabBarIcon: ({ color }) => <FeedIcon color={color} />,
+          headerRight: () => <CreateNewPostLink />,
+          tabBarTestID: 'course-tab',
+        }}
+      />
+
       <Tabs.Screen
         name="index"
         options={{
