@@ -3,16 +3,19 @@ import React from 'react';
 
 import type { Course } from '@/api';
 import { useCourses } from '@/api'
+import images from "@/assets/images"
 import { Card,HorizontalCard } from '@/components/card';
-import { useAuth } from '@/core';
 import { Button, EmptyList, FocusAwareStatusBar, Text, View } from '@/ui';
-
+import { Image } from '@/ui';
 export default function Feed() {
-  const dataEmail = useAuth.use.email();
+  // const dataEmail = useAuth.use.email() || "JoeSmith@gmail.com";
+  const dataEmail = "JoeSmith@gmail.com"
     const { data, isPending, isError } = useCourses({
     //@ts-ignore
     variables: { id: dataEmail },
   });
+  const firstData = data?.slice(0,3);
+  const secondData = data?.slice(3);
   const renderItem = React.useCallback(
     ({ item }: { item: Course }) => <Card {...item} />,
     []
@@ -22,7 +25,8 @@ export default function Feed() {
     []
   );
 
-  console.debug(`${JSON.stringify(useCourses())}HII`);
+  console.debug(`${JSON.stringify(useCourses())}`);
+  console.debug(`${JSON.stringify(data)}`);
 
   if (isError) {
     return (
@@ -38,12 +42,18 @@ export default function Feed() {
   }
   return (
     <View className="flex-1 p-4">
-      <Text className="pt-16 text-3xl font-extrabold">My Courses!{dataEmail}</Text>
-      <Text className="pt-8 text-xl">Keep Learning</Text>
+      <View className="flex flex-row justify-between pt-16 ">
+        <Text className="text-3xl font-extrabold">My Courses! </Text>
+        <Image
+        className="h-8 w-8"
+        source={images.icon}
+            />
+      </View>
+      <Text className="pt-8 text-xl">Top Courses</Text>
        <FlashList
        className="h-52"
         horizontal={true}
-        data={data}
+        data={firstData}
         renderItem={renderHorizontalItem}
         keyExtractor={(_, index) => `item-${index}`}
         ListEmptyComponent={<EmptyList isLoading={isPending} />}
@@ -52,12 +62,12 @@ export default function Feed() {
       <FocusAwareStatusBar />
       <Text className="pt-4 text-xl">All Courses</Text>
       <FlashList
-        data={data}
+        data={secondData}
         renderItem={renderItem}
         numColumns={2}
         keyExtractor={(_, index) => `item-${index}`}
         ListEmptyComponent={<EmptyList isLoading={isPending} />}
-        estimatedItemSize={300}
+        estimatedItemSize={10}
       />
        <View className="flex flex-row justify-end">
  <Button label="+ Add Course" className="w-48"/>

@@ -15,23 +15,23 @@ export default function Onboarding() {
       </View>
       <View className="justify-end ">
         <Text className="my-3 text-center text-5xl font-bold">
-          Obytes Starter
+          Hey everyone!
         </Text>
         <Text className="mb-2 text-center text-lg text-gray-600">
-          The right way to build your mobile app
+          We are here to do work!
         </Text>
 
         <Text className="my-1 pt-6 text-left text-lg">
-          🚀 Production-ready{' '}
+          Go sick!
         </Text>
         <Text className="my-1 text-left text-lg">
-          🥷 Developer experience + Productivity
+          Yup
         </Text>
         <Text className="my-1 text-left text-lg">
-          🧩 Minimal code and dependencies
+          Skip all this
         </Text>
         <Text className="my-1 text-left text-lg">
-          💪 well maintained third-party libraries
+          Sorry oops.
         </Text>
       </View>
       <SafeAreaView className="mt-6">

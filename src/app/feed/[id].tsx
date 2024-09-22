@@ -1,13 +1,13 @@
 import { Stack, useLocalSearchParams } from 'expo-router';
 import * as React from 'react';
 
-import { usePost } from '@/api';
+import { useCourse } from '@/api';
 import { ActivityIndicator, FocusAwareStatusBar, Text, View } from '@/ui';
 
 export default function Post() {
   const local = useLocalSearchParams<{ id: string }>();
 
-  const { data, isPending, isError } = usePost({
+  const { data, isPending, isError } = useCourse({
     //@ts-ignore
     variables: { id: local.id },
   });
@@ -15,7 +15,7 @@ export default function Post() {
   if (isPending) {
     return (
       <View className="flex-1 justify-center  p-3">
-        <Stack.Screen options={{ title: 'Post', headerBackTitle: 'Feed' }} />
+        <Stack.Screen options={{ title: 'Post', headerBackTitle: 'Back' }} />
         <FocusAwareStatusBar />
         <ActivityIndicator />
       </View>
@@ -24,7 +24,7 @@ export default function Post() {
   if (isError) {
     return (
       <View className="flex-1 justify-center p-3">
-        <Stack.Screen options={{ title: 'Post', headerBackTitle: 'Feed' }} />
+        <Stack.Screen options={{ title: 'Post', headerBackTitle: 'Back' }} />
         <FocusAwareStatusBar />
         <Text className="text-center">Error loading post</Text>
       </View>
@@ -32,11 +32,14 @@ export default function Post() {
   }
 
   return (
-    <View className="flex-1 p-3 ">
-      <Stack.Screen options={{ title: 'Post', headerBackTitle: 'Feed' }} />
+    <View className="flex px-4">
+      <Stack.Screen options={{ title: 'Course', headerBackTitle: 'Back' }} />
       <FocusAwareStatusBar />
-      <Text className="text-xl">{data.title}</Text>
-      <Text>{data.body} </Text>
+      <View className="mx-auto my-16 flex">
+        <Text className="text-center text-xl">Welcome to</Text>
+        <Text className="text-2xl font-extrabold text-primary-500">{data.course.name}</Text>
+      </View>
+      <Text>{data.course.intro} </Text>
     </View>
   );
 }

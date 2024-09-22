@@ -10,6 +10,6 @@ type Response = Course[];
 export const useCourses = createQuery<Response, Variables, AxiosError>({
   queryKey: ['courses'],
   fetcher: (variables) => {
-    return client.post(`getCourseSearch/${variables.id}`).then((response) => response.data.posts);
+    return client.post(`getCourseSearch/${variables.id}`).then((response) => response.data.courses);
   },
 });
