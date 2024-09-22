@@ -21,6 +21,9 @@ Users can access their performance reports through the Grades section, where the
 ### :bell: Reminders
 The reminders section provides a convenient overview of the most pressing assignments and tasks. Users can quickly glance at their upcoming deadlines and high-priority homework to stay on top of their schedule. 
 
+## :speaker: Support for multiple languages
+We introduced a feature to give users the option to switch between their main languages, for the moment only english and spanish are inplemented.
+
 ## Technologies
 
 ## :computer: Front-End
@@ -28,9 +31,6 @@ We utilized technologiez such as React Native, typescript, and Tailwind CSS, we 
 
 ## :computer: Back-End
 For the backend with mainly used Firebase cloud, store datab base, as well as firebase functions. Also, we have made it so it it serverless which contributes to the cost efficiency of the project when trying to escalate it to the next level.
-
-## :speaker: Support for multiple languages
-We introduced a feature to give users the option to switch between their main languages, for the moment only english and spanish are inplemented.
 
 A diagram of our backend and workflow can be found down below, this diagram was followed in order to get the app up and running, although as new ideas came to fruition we expanded beyond this diagram.
 
