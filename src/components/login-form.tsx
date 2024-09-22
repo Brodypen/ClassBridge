@@ -42,12 +42,12 @@ export const LoginForm = ({ onSubmit = () => {} }: LoginFormProps) => {
           Sign In
         </Text>
 
-        <ControlledInput
+        {/* <ControlledInput
           testID="name"
           control={control}
           name="name"
           label="Name"
-        />
+        /> */}
 
         <ControlledInput
           testID="email-input"

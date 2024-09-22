@@ -6,6 +6,7 @@ import { useAuth, useIsFirstTime } from '@/core';
 import { Pressable, Text } from '@/ui';
 import {
   Feed as FeedIcon,
+  Home as HomeIcon,
   Settings as SettingsIcon,
   Style as StyleIcon,
 } from '@/ui/icons';
@@ -37,7 +38,7 @@ export default function TabLayout() {
         options={{
           title: 'Course',
           headerShown: false,
-          tabBarIcon: ({ color }) => <FeedIcon color={color} />,
+          tabBarIcon: ({ color }) => <HomeIcon color={color} />,
           headerRight: () => <CreateNewPostLink />,
           tabBarTestID: 'course-tab',
         }}
@@ -46,7 +47,8 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Feed',
+          title: 'About',
+          headerShown: false,
           tabBarIcon: ({ color }) => <FeedIcon color={color} />,
           headerRight: () => <CreateNewPostLink />,
           tabBarTestID: 'feed-tab',
@@ -56,7 +58,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="style"
         options={{
-          title: 'Style',
+          title: 'Reminder',
           headerShown: false,
           tabBarIcon: ({ color }) => <StyleIcon color={color} />,
           tabBarTestID: 'style-tab',

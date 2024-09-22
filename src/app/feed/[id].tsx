@@ -2,8 +2,9 @@ import { Stack, useLocalSearchParams } from 'expo-router';
 import * as React from 'react';
 
 import { useCourse } from '@/api';
+import images from '@/assets/images';
 import { ActivityIndicator, FocusAwareStatusBar, Text, View } from '@/ui';
-
+import { Image } from '@/ui';
 export default function Post() {
   const local = useLocalSearchParams<{ id: string }>();
 
@@ -39,7 +40,16 @@ export default function Post() {
         <Text className="text-center text-xl">Welcome to</Text>
         <Text className="text-2xl font-extrabold text-primary-500">{data.course.name}</Text>
       </View>
-      <Text>{data.course.intro} </Text>
+      <Text className="pb-8">{data.course.intro} </Text>
+                                  <Image
+        className="h-[162px] w-[349px] px-1 pt-0"
+        source={images.hw_button}
+            />
+
+             <Image
+        className="h-[162px] w-[349px] px-1 pt-0"
+        source={images.grades_button}
+            />
     </View>
   );
 }
