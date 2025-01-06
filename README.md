@@ -2,8 +2,6 @@
   <img alt="logo" src="https://imgur.com/swVSP2G.png" width="124px" style="border-radius:10px"/><br/>
 classbridge </h1>
 
-> This Project is based on [Obytes starter](https://starter.obytes.com)
-
 # ClassBridge
 Welcome to classbridge, a phone app which its main focus is to bring financial literacy who come from low-income backgrounds and may lack access to proper education and opportunities. This product is meant for everyone including children and grown ups so they can learn together.
 
@@ -71,7 +69,7 @@ pnpm android
 ```
 
 ## ✍️ Documentation
-
+- [Obytes starter](https://starter.obytes.com)
 - [Rules and Conventions](https://starter.obytes.com/getting-started/rules-and-conventions/)
 - [Project structure](https://starter.obytes.com/getting-started/project-structure)
 - [Environment vars and config](https://starter.obytes.com/getting-started/environment-vars-config)
