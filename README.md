@@ -2,6 +2,7 @@
   <img alt="logo" src="https://imgur.com/swVSP2G.png" width="124px" style="border-radius:10px"/><br/>
 classbridge </h1>
 
+Link to [DevPost](https://devpost.com/software/classbridge-x1dzw9)
 # ClassBridge
 Welcome to classbridge, a phone app which its main focus is to bring financial literacy who come from low-income backgrounds and may lack access to proper education and opportunities. This product is meant for everyone including children and grown ups so they can learn together.
 
